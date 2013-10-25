@@ -1,0 +1,13 @@
+---
+layout: default
+title: Blog Posts
+---
+
+<div>
+  <h2>Blog Posts</h2>
+  <ul>
+    {% for post in site.categories.blog %}
+    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

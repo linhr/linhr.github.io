@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+      <h2>{{ site.subtitle }}</h2>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+        <li><a href="{{ site.baseurl }}/projects/">Projects</a></li>
+        <li><a href="{{ site.baseurl }}/about/">About</a></li>
+      </ul>
+    </nav>
+    {{ content }}
+    <footer>
+      <p>Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - Powered by <a href="http://jekyllrb.com">jekyll</a></p>
+    </footer>
+  </body>
+</html>

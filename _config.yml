@@ -1,0 +1,10 @@
+title: Heran's Website
+subtitle: Make a dent in the universe.
+author: linhr
+
+permalink: /:categories/:year/:month/:day/:title/
+baseurl: 
+exclude: ['README.md', 'CNAME', 'Gemfile', 'Gemfile.lock', 'Rakefile']
+
+markdown: redcarpet
+pygments: true
