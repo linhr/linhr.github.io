@@ -16,9 +16,11 @@
         <li><a href="{{ site.baseurl }}/about/">About</a></li>
       </ul>
     </nav>
-    {{ content }}
+    <section>
+      {{ content }}
+    </section>
     <footer>
-      <p>Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - Powered by <a href="http://jekyllrb.com">jekyll</a></p>
+      <p>Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - Hosted by <a href="http://github.com/linhr/linhr.github.io" target="_blank">GitHub</a> - Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a></p>
     </footer>
   </body>
 </html>
