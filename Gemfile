@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'github-pages'
+gem 'compass', '>= 0.12.2'
+gem 'susy'
