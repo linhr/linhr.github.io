@@ -21,4 +21,9 @@ $legacy-support-for-ie: true;
 $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true;
 
-@import "susy"
+@import "susy";
+
+$fa-font-path: "../fonts/font-awesome";
+$fa-css-prefix: icon;
+
+@import "vendor/font-awesome";

@@ -30,6 +30,19 @@ body {
 	color: white;
 }
 
+@mixin underscore($width, $color, $style: solid) {
+	border: {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: {
+			style: $style;
+			width: $width;
+			color: $color;
+		}
+	}
+}
+
 .container {
 	@include container($total-columns, $tablet, $desktop);
 	@if $debug { @include susy-grid-background; }
@@ -53,14 +66,42 @@ body {
 		}
 	}
 	.nav {
+		$underscore-thickness: 6px;
 		@include leader(1);
-		@include padding-leader(0.5);
-		@include trailing-border(5px, 0.5);
-		border-bottom-color: adjust-lightness(black, 30%);
 		ul {
-			@include horizontal-list(1em);
-			padding-left: 1em;
-			padding-right: 1em;
+			@include legacy-pie-clearfix;
+			@include underscore($underscore-thickness, adjust-lightness(black, 30%));
+			padding: 0 1em;
+			margin: -$underscore-thickness 0 0 0;
+			li {
+				@include no-bullet;
+				@include float(left);
+				@include underscore($underscore-thickness, adjust-lightness(black, 50%));
+				white-space: nowrap;
+				margin: {
+					right: 1em;
+					bottom: -$underscore-thickness;
+				}
+				&:hover {
+					border-bottom-color: adjust-lightness(black, 75%);
+				}
+				a {
+					padding: {
+						top: rhythm(0.5);
+						bottom: rhythm(0.5);
+						left: 0.5em;
+						right: 0.5em;
+					}
+					display: block;
+					i.#{$fa-css-prefix} {
+						
+						padding: {
+							left: 0.25em;
+							right: 0.25em;
+						}
+					}
+				}
+			}
 		}
 	}
 	.main {
