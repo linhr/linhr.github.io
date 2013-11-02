@@ -1,0 +1,10 @@
+.container .main {
+	.title {
+		@include adjust-font-size-to(1.8em, 2);
+		font-weight: bold;
+	}
+	.time {
+		color: lighten(black, 36%);
+		@include trailer(1);
+	}
+}

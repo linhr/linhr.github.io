@@ -4,7 +4,7 @@
 
 body {
 	background-color: lighten(black, 10%);
-	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	@if $debug {
 		background-color: white !important;
 		@include debug-vertical-alignment;
@@ -30,79 +30,20 @@ body {
 	color: white;
 }
 
-@mixin underscore($width, $color, $style: solid) {
-	border-bottom: $width $style $color;
-}
-
 .container {
 	@include container($total-columns, $tablet, $desktop);
 	@if $debug { @include susy-grid-background; }
 	.banner {
 		padding: 0 1em;
-		.title {
-			@include rhythm(0, 1.5, 0.5, 0, 36px);
-			@include adjust-font-size-to(36px, 2);
-			font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
-			font-weight: bold;
-			color: white;
-			a {
-				@include unstyled-link;
-			}
-		}
-		.motto {
-			@include adjust-font-size-to(20px, 1);
-			font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-			font-style: italic;
-			color: lighten(black, 30%);
-		}
 	}
 	.nav {
-		$underscore-thickness: 6px;
 		@include leader(1);
-		ul {
-			@include legacy-pie-clearfix;
-			@include underscore($underscore-thickness, lighten(black, 30%));
-			padding: 0 1em;
-			margin: -$underscore-thickness 0 0 0;
-			li {
-				@include no-bullet;
-				@include float(left);
-				@include underscore($underscore-thickness, lighten(black, 50%));
-				white-space: nowrap;
-				margin: {
-					right: 1em;
-					bottom: -$underscore-thickness;
-				}
-				&:hover {
-					border-bottom-color: lighten(black, 75%);
-				}
-				a {
-					padding: rhythm(0.5) 0.5em;
-					display: block;
-					i.#{$fa-css-prefix} {
-						padding-right: 0.25em;
-					}
-				}
-			}
-		}
 	}
 	.main {
 		padding: rhythm(1) 1em;
-		.title {
-			@include adjust-font-size-to(28px, 2);
-			font-weight: bold;
-		}
-		.time {
-			color: lighten(black, 36%);
-			@include trailer(1);
-		}
-		p {
-			@include padding-trailer(1);
-		}
 	}
 	.footer {
 		@include rhythm(0, 1, 1, 0);
-		text-align: center;
 	}
 }
 
@@ -131,3 +72,9 @@ body {
 		}
 	}
 }
+
+@import "partials/header";
+@import "partials/content";
+@import "partials/footer";
+@import "partials/typography";
+@import "partials/syntax";

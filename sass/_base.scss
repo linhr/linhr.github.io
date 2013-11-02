@@ -1,11 +1,8 @@
-@import "compass/reset";
-@import "compass/typography";
-@import "compass/css3";
-
-$debug: false;
+$debug: true;
 
 $base-font-size: 16px;
 $base-line-height: 24px;
+$relative-font-sizing: false;
 
 $total-columns: 4;
 $column-width: 4em;
@@ -20,6 +17,10 @@ $desktop: 50em 12 lt-ie9;
 $legacy-support-for-ie: true;
 $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true;
+
+@import "compass/reset";
+@import "compass/typography";
+@import "compass/css3";
 
 @import "susy";
 
