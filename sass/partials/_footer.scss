@@ -1,3 +1,10 @@
 .container .footer {
 	text-align: center;
+	a {
+		@include link-colors(
+			$normal: desaturate($blue, 80%),
+			$hover: $blue);
+		@include single-transition(color, 0.5s);
+		text-decoration: none;
+	}
 }

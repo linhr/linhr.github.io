@@ -28,3 +28,8 @@ $fa-font-path: "../fonts/font-awesome";
 $fa-css-prefix: icon;
 
 @import "vendor/font-awesome";
+
+// theme colors
+$green: #1dd300;
+$blue: adjust-hue($green, 60deg);
+$red: adjust-hue($green, 225deg);

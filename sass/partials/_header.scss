@@ -4,9 +4,13 @@
 		@include adjust-font-size-to(2.25em, 2);
 		font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 		font-weight: bold;
-		color: white;
+		color: darken(desaturate($blue, 75%), 10%);
 		a {
 			@include unstyled-link;
+			&:hover {
+				color: white;
+			}
+			@include single-transition(color, 0.5s);
 		}
 	}
 	.motto {
@@ -25,22 +29,29 @@
 	$underscore-thickness: 6px;
 	ul {
 		@include legacy-pie-clearfix;
-		@include underscore($underscore-thickness, lighten(black, 30%));
+		@include underscore($underscore-thickness, lighten(black, 15%));
 		padding: 0 1em;
 		margin: -$underscore-thickness 0 0 0;
 		li {
 			@include no-bullet;
 			@include float(left);
-			@include underscore($underscore-thickness, lighten(black, 50%));
+			@include underscore($underscore-thickness, lighten(black, 20%));
 			white-space: nowrap;
 			margin: {
-				right: 1em;
+				right: 0.25em;
 				bottom: -$underscore-thickness;
 			}
 			&:hover {
-				border-bottom-color: lighten(black, 75%);
+				border-bottom-color: desaturate($red, 75%);
+				@include single-transition(border-bottom-color, 0.5s);
 			}
 			a {
+				@include link-colors(
+					$normal: lighten(black, 50%),
+					$hover: white);
+				@include single-transition(color, 0.5s);
+				background-color: lighten(black, 15%);
+				text-decoration: none;
 				padding: rhythm(0.5) 0.5em;
 				display: block;
 				i.#{$fa-css-prefix} {
