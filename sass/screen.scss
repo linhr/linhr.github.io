@@ -3,7 +3,7 @@
 @include establish-baseline;
 
 body {
-	background-color: adjust-lightness(black, 10%);
+	background-color: lighten(black, 10%);
 	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	@if $debug {
 		background-color: white !important;
@@ -20,27 +20,18 @@ body {
 	clear: both;
 }
 .header-wrap {
-	background-color: adjust-lightness(black, 15%);
+	background-color: lighten(black, 15%);
 }
 .content-wrap {
-	background-color: adjust-lightness(black, 92.5%);
+	background-color: lighten(black, 92.5%);
 }
 .footer-wrap {
-	background-color: adjust-lightness(black, 15%);
+	background-color: lighten(black, 15%);
 	color: white;
 }
 
 @mixin underscore($width, $color, $style: solid) {
-	border: {
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: {
-			style: $style;
-			width: $width;
-			color: $color;
-		}
-	}
+	border-bottom: $width $style $color;
 }
 
 .container {
@@ -62,7 +53,7 @@ body {
 			@include adjust-font-size-to(20px, 1);
 			font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
 			font-style: italic;
-			color: adjust-lightness(black, 30%);
+			color: lighten(black, 30%);
 		}
 	}
 	.nav {
@@ -70,50 +61,39 @@ body {
 		@include leader(1);
 		ul {
 			@include legacy-pie-clearfix;
-			@include underscore($underscore-thickness, adjust-lightness(black, 30%));
+			@include underscore($underscore-thickness, lighten(black, 30%));
 			padding: 0 1em;
 			margin: -$underscore-thickness 0 0 0;
 			li {
 				@include no-bullet;
 				@include float(left);
-				@include underscore($underscore-thickness, adjust-lightness(black, 50%));
+				@include underscore($underscore-thickness, lighten(black, 50%));
 				white-space: nowrap;
 				margin: {
 					right: 1em;
 					bottom: -$underscore-thickness;
 				}
 				&:hover {
-					border-bottom-color: adjust-lightness(black, 75%);
+					border-bottom-color: lighten(black, 75%);
 				}
 				a {
-					padding: {
-						top: rhythm(0.5);
-						bottom: rhythm(0.5);
-						left: 0.5em;
-						right: 0.5em;
-					}
+					padding: rhythm(0.5) 0.5em;
 					display: block;
 					i.#{$fa-css-prefix} {
-						
-						padding: {
-							left: 0.25em;
-							right: 0.25em;
-						}
+						padding-right: 0.25em;
 					}
 				}
 			}
 		}
 	}
 	.main {
-		@include rhythm(0, 1, 1, 0);
-		padding-left: 1em;
-		padding-right: 1em;
+		padding: rhythm(1) 1em;
 		.title {
 			@include adjust-font-size-to(28px, 2);
 			font-weight: bold;
 		}
 		.time {
-			color: adjust-lightness(black, 36%);
+			color: lighten(black, 36%);
 			@include trailer(1);
 		}
 		p {
