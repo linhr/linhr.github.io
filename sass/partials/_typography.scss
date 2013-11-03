@@ -6,7 +6,7 @@
 	font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-.container .main {
+.container {
 	p {
 		@include padding-trailer(1);
 	}

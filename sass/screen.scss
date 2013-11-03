@@ -31,18 +31,18 @@ body {
 }
 
 .container {
-	@include container($total-columns, $tablet, $desktop);
+	@include container($total-columns, $tablet, fallback($desktop));
 	@if $debug { @include susy-grid-background; }
-	.banner {
+	.banner-inner {
 		padding: 0 1em;
 	}
-	.nav {
+	.nav-inner {
 		@include leader(1);
 	}
-	.main {
+	.main-inner {
 		padding: rhythm(1) 1em;
 	}
-	.footer {
+	.footer-inner {
 		@include rhythm(0, 1, 1, 0);
 	}
 }
@@ -54,20 +54,20 @@ body {
 }
 
 .container {
-	@include at-breakpoint($desktop) {
+	@include at-breakpoint(fallback($desktop)) {
 		@if $debug { @include susy-grid-background; }
-		.banner {
+		.banner-inner {
 			padding: 0 2em;
 		}
-		.nav {
+		.nav-inner {
 		}
-		.main {
+		.main-inner {
 			@include squish(1, 1);
 			padding-left: 0;
 			padding-right: 0;
 			min-height: rhythm(10);
 		}
-		.footer {
+		.footer-inner {
 			@include pad(1, 1);
 		}
 	}

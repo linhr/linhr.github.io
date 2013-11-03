@@ -6,36 +6,45 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/stylesheets/screen.css">
   </head>
   <body>
     <div class="header-wrap">
       <div class="container">
         <header class="banner">
-          <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-          <h2 class="motto">{{ site.subtitle }}</h2>
+          <div class="banner-inner">
+            <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+            <h2 class="motto">{{ site.subtitle }}</h2>
+          </div>
         </header>
         <nav class="nav">
-          <ul>
-            <li><a href="{{ site.baseurl }}/"><i class="icon icon-home icon-lg"></i>Home</a></li>
-            <li><a href="{{ site.baseurl }}/blog/"><i class="icon icon-pencil icon-lg"></i>Blog</a></li>
-            <li><a href="{{ site.baseurl }}/projects/"><i class="icon icon-puzzle-piece icon-lg"></i>Projects</a></li>
-            <li><a href="{{ site.baseurl }}/about/"><i class="icon icon-user icon-lg"></i>About</a></li>
-          </ul>
+          <div class="nav-inner">
+            <ul>
+              <li><a href="{{ site.baseurl }}/"><i class="icon icon-home icon-lg"></i>Home</a></li>
+              <li><a href="{{ site.baseurl }}/blog/"><i class="icon icon-pencil icon-lg"></i>Blog</a></li>
+              <li><a href="{{ site.baseurl }}/projects/"><i class="icon icon-puzzle-piece icon-lg"></i>Projects</a></li>
+              <li><a href="{{ site.baseurl }}/about/"><i class="icon icon-user icon-lg"></i>About</a></li>
+            </ul>
+          </div>
         </nav>
       </div>
     </div>
     <div class="content-wrap">
       <div class="container">
         <section class="main">
-          {{ content }}
+          <div class="main-inner">
+            {{ content }}
+          </div>
         </section>
       </div>
     </div>
     <div class="footer-wrap">
       <div class="container">
         <footer class="footer">
-          <p>Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - Hosted by <a href="http://github.com/linhr/linhr.github.io" target="_blank">GitHub</a> - Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a></p>
+          <div class="footer-inner">
+            <p>Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - Hosted by <a href="http://github.com/linhr/linhr.github.io" target="_blank">GitHub</a> - Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a></p>
+          </div>
         </footer>
       </div>
     </div>

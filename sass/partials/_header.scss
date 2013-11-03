@@ -1,21 +1,24 @@
-.container .banner {
+.container .banner-inner {
 	.title {
 		@include rhythm(0, 1.5, 0.5, 0);
 		@include adjust-font-size-to(2.25em, 2);
 		font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 		font-weight: bold;
-		color: darken(desaturate($blue, 75%), 10%);
+		&, a {
+			color: darken(desaturate($blue, 75%), 10%);
+		}
 		a {
-			@include unstyled-link;
+			@include single-transition(color, 0.5s);
+			text-decoration: none;
 			&:hover {
 				color: white;
 			}
-			@include single-transition(color, 0.5s);
 		}
 	}
 	.motto {
 		@include adjust-font-size-to(1.25em, 1);
 		font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+		font-weight: normal;
 		font-style: italic;
 		color: lighten(black, 30%);
 	}
@@ -25,8 +28,8 @@
 	border-bottom: $width $style $color;
 }
 
-.container .nav {
-	$underscore-thickness: 6px;
+.container .nav-inner {
+	$underscore-thickness: 8px;
 	ul {
 		@include legacy-pie-clearfix;
 		@include underscore($underscore-thickness, lighten(black, 15%));
@@ -34,16 +37,22 @@
 		margin: -$underscore-thickness 0 0 0;
 		li {
 			@include no-bullet;
-			@include float(left);
 			@include underscore($underscore-thickness, lighten(black, 20%));
 			white-space: nowrap;
 			margin: {
-				right: 0.25em;
+				top: $underscore-thickness*2;
 				bottom: -$underscore-thickness;
 			}
+			@include at-breakpoint(fallback($tablet)) {
+				@include float(left);
+				margin: {
+					top: 0;
+					right: 0.25em;
+				}
+			}
 			&:hover {
-				border-bottom-color: desaturate($red, 75%);
 				@include single-transition(border-bottom-color, 0.5s);
+				border-bottom-color: desaturate($red, 75%);
 			}
 			a {
 				@include link-colors(

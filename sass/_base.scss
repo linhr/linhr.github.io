@@ -12,7 +12,12 @@ $grid-padding: 0.5em;
 $show-grid-backgrounds: $debug;
 
 $tablet: 8;
-$desktop: 50em 12 lt-ie9;
+$desktop: 50em 12;
+
+$no-media-queries: lt-ie9;
+@function fallback($media-layout) {
+	@return join($media-layout, $no-media-queries);
+}
 
 $legacy-support-for-ie: true;
 $legacy-support-for-ie6: true;
