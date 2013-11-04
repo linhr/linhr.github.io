@@ -4,7 +4,14 @@ author: linhr
 
 permalink: /:categories/:year/:month/:day/:title/
 baseurl: 
-exclude: ['README.md', 'CNAME', 'Gemfile', 'Gemfile.lock', 'Rakefile', 'sass', 'config.rb']
+exclude:
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - sass
+  - config.rb
 
 markdown: redcarpet
 pygments: true
