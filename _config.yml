@@ -3,7 +3,7 @@ subtitle: Make a dent in the universe.
 author: linhr
 
 permalink: /:categories/:year/:month/:day/:title/
-timezone: Etc/UTC
+timezone: Asia/Shanghai
 baseurl: 
 exclude:
   - README.md
