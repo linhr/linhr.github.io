@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello world!"
-date: 2013-10-25 21:53:00
+date: 2013-10-25 21:53:00+0800
 categories: blog
 ---
 

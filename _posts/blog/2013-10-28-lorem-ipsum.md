@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lorem ipsum"
-date: 2013-10-28 20:53:00
+date: 2013-10-28 20:53:00+0800
 categories: blog
 ---
 
