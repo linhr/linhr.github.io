@@ -3,10 +3,13 @@
 @include establish-baseline;
 
 body {
-	background-color: lighten(black, 10%);
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: lighten(black, 95%);
+	background-image: url(../images/bg.png);
+	background-attachment: fixed;
+	font-family: "Play", Arial, "Helvetica Neue", Helvetica, sans-serif;
 	@if $debug {
 		background-color: white !important;
+		background-attachment: scroll !important;
 		@include debug-vertical-alignment;
 		* {
 			background-color: transparent !important;
@@ -15,35 +18,13 @@ body {
 	}
 }
 
-.header-wrap, .footer-wrap, .content-wrap {
-	width: 100%;
-	clear: both;
-}
-.header-wrap {
-	background-color: lighten(black, 12.5%);
-}
-.content-wrap {
-	background-color: lighten(black, 92.5%);
-}
-.footer-wrap {
-	background-color: lighten(black, 12.5%);
-	color: white;
-}
-
 .container {
 	@include container($total-columns, $tablet, fallback($desktop));
 	@if $debug { @include susy-grid-background; }
-	.banner-inner {
-		padding: 0 1em;
-	}
-	.nav-inner {
-		@include leader(1);
-	}
 	.main-inner {
-		padding: rhythm(1) 1em;
-	}
-	.footer-inner {
-		@include rhythm(0, 1, 1, 0);
+		@include rhythm(1, 2, 2, 1);
+		padding-left: 1em;
+		padding-right: 1em;
 	}
 }
 
@@ -51,24 +32,21 @@ body {
 	@include at-breakpoint($tablet) {
 		@if $debug { @include susy-grid-background; }
 	}
+	.main-inner {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 }
 
 .container {
 	@include at-breakpoint(fallback($desktop)) {
 		@if $debug { @include susy-grid-background; }
-		.banner-inner {
-			padding: 0 2em;
-		}
-		.nav-inner {
-		}
 		.main-inner {
-			@include squish(1, 1);
-			padding-left: 0;
-			padding-right: 0;
 			min-height: rhythm(10);
-		}
-		.footer-inner {
 			@include pad(1, 1);
+		}
+		.banner-inner, .nav-inner, .main-inner, .footer-inner {
+			@include squish(1, 1);
 		}
 	}
 }

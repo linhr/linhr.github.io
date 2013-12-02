@@ -1,26 +1,24 @@
 .container .banner-inner {
+	text-align: center;
 	.title {
-		@include rhythm(0, 1.5, 0.5, 0);
+		@include padding-leader(2);
 		@include adjust-font-size-to(2.25em, 2);
-		font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 		font-weight: bold;
 		&, a {
-			color: darken(desaturate($blue, 75%), 10%);
+			color: lighten(black, 50%);
 		}
 		a {
 			@include single-transition(color, 0.5s);
 			text-decoration: none;
 			&:hover {
-				color: white;
+				color: darken(desaturate($blue, 25%), 10%);
 			}
 		}
 	}
 	.motto {
 		@include adjust-font-size-to(1.25em, 1);
-		font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
 		font-weight: normal;
-		font-style: italic;
-		color: lighten(black, 30%);
+		color: lighten(black, 75%);
 	}
 }
 
@@ -29,43 +27,42 @@
 }
 
 .container .nav-inner {
-	$underscore-thickness: 8px;
+	$underscore-thickness: 2px;
 	ul {
 		@include legacy-pie-clearfix;
-		@include underscore($underscore-thickness, lighten(black, 15%));
+		@include underscore($underscore-thickness, transparent);
 		padding: 0 1em;
-		margin: -$underscore-thickness 0 0 0;
+		margin-bottom: -$underscore-thickness;
 		li {
 			@include no-bullet;
-			@include underscore($underscore-thickness, lighten(black, 20%));
+			@include underscore($underscore-thickness, lighten(black, 85%));
 			white-space: nowrap;
-			margin: {
-				top: $underscore-thickness*2;
-				bottom: -$underscore-thickness;
-			}
-			@include at-breakpoint(fallback($tablet)) {
-				@include float(left);
-				margin: {
-					top: 0;
-					right: 0.25em;
-				}
-			}
+			margin-bottom: -$underscore-thickness;
 			&:hover {
 				@include single-transition(border-bottom-color, 0.5s);
-				border-bottom-color: desaturate($red, 75%);
+				border-bottom-color: desaturate($blue, 25%);
 			}
 			a {
 				@include link-colors(
 					$normal: lighten(black, 50%),
-					$hover: white);
+					$hover: black);
 				@include single-transition(color, 0.5s);
-				background-color: lighten(black, 15%);
 				text-decoration: none;
-				padding: rhythm(0.5) 0.5em;
+				padding: rhythm(0.25) 0.5em;
+				margin-top: (rhythm(1) - 2*rhythm(0.25));
 				display: block;
 				i.#{$fa-css-prefix} {
 					padding-right: 0.25em;
 				}
+			}
+		}
+		@include at-breakpoint(fallback($tablet)) {
+			text-align: center;
+			li {
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+				margin-left: 0.25em;
 			}
 		}
 	}

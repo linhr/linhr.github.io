@@ -1,7 +1,7 @@
 $debug: false;
 
 $base-font-size: 16px;
-$base-line-height: 24px;
+$base-line-height: 26px;
 $relative-font-sizing: false;
 
 $total-columns: 4;
@@ -29,12 +29,13 @@ $legacy-support-for-ie7: true;
 
 @import "susy";
 
-$fa-font-path: "../fonts/font-awesome";
+// $fa-font-path: "../fonts/font-awesome";
+$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts";
 $fa-css-prefix: icon;
 
 @import "vendor/font-awesome";
 
 // theme colors
 $green: #1dd300;
-$blue: adjust-hue($green, 60deg);
+$blue: adjust-hue($green, 90deg);
 $red: adjust-hue($green, 225deg);

@@ -1,14 +1,12 @@
 %mono {
-	font-family: "Courier New", monospace;
+	font-family: Consolas, Monaco, "Ubuntu Mono", monospace;
 	vertical-align: top; // hack for keeping vertical rhythm
 }
-%serif {
-	font-family: Georgia, Times, "Times New Roman", serif;
-}
 
-.container {
+.container .main-inner {
+	color: lighten(black, 15%);
 	p {
-		@include padding-trailer(1);
+		@include rhythm(1, 0, 0, 1);
 	}
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold;
@@ -34,12 +32,12 @@
 	hr {
 		padding: 0;
 		border: {
-			top: 1px solid lighten(black, 60%);
+			top: 1px solid lighten(black, 80%);
 			bottom: 0;
 			left: 0;
 			right: 0;
 		}
-		$spacing: rhythm(0.5);
+		$spacing: rhythm(1);
 		margin: ($spacing - 1px) 0 $spacing 0;
 	}
 	em {
@@ -47,6 +45,7 @@
 	}
 	strong {
 		font-weight: bold;
+		line-height: 0;
 	}
 	small {
 		font-size: 0.8em;
@@ -71,18 +70,34 @@
 	pre, code {
 		@extend %mono;
 	}
+	code {
+		padding: 0 0.2em;
+		margin: 0 0.2em;
+		border: 1px solid lighten(black, 90%);
+		background-color: lighten(black, 95%);
+		@include border-radius(3px);
+		@include word-break(normal);
+	}
 	blockquote, pre {
 		@include rhythm-borders(1px, 0.5, $border-style: solid);
 		@include border-radius(6px);
-		margin: rhythm(0.5) 0;
-		border-color: lighten(black, 60%);
-		background: lighten(black, 80%);
+		margin: rhythm(1) 0;
+		border-color: lighten(black, 90%);
+		background-color: lighten(black, 95%);
 	}
 	blockquote {
-		@extend %serif;
 		font-style: italic;
 		p {
+			margin: 0;
+		}
+	}
+	pre {
+		overflow: auto;
+		code {
 			padding: 0;
+			margin: 0;
+			border: 0;
+			background-color: transparent;
 		}
 	}
 	ul {
