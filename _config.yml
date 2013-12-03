@@ -16,3 +16,7 @@ exclude:
 
 markdown: redcarpet
 pygments: true
+
+google_analytics:
+  tracking_id: 'UA-46149677-1'
+  cookie_domain: 'linhr.me'
