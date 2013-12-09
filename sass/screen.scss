@@ -22,7 +22,7 @@ body {
 	@include container($total-columns, $tablet, fallback($desktop));
 	@if $debug { @include susy-grid-background; }
 	.main-inner {
-		@include rhythm(1, 2, 2, 1);
+		@include rhythm(1, 2, 2, 0);
 		padding-left: 1em;
 		padding-right: 1em;
 	}

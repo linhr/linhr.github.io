@@ -67,6 +67,9 @@
 	sub {
 		bottom: -0.25em;
 	}
+	img {
+		max-width: 100%;
+	}
 	pre, code {
 		@extend %mono;
 	}
