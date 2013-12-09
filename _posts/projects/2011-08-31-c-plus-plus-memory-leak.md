@@ -1,16 +1,16 @@
 ---
 layout: project
-title: "Memory leak in C++ (technical report)"
+title: "Memory Leak in C++ (Technical Report)"
 date: 2011-08-31 00:00:00+0800
 categories: projects
 ---
 
-Memory leak is one of the most annoying problems when programming in C++. Although memory leak is hard to detect and may have severe impact on long running program such as Web server, there has been many techniques and paradigms to prevent memory leaks. In this technical report, I investigated potential sources of memory leaks, how to detect them and how to prevent them.
+Memory leak is one of the most annoying problems when programming in C++. Although memory leaks are hard to detect and may have severe impact on long running applications such as Web servers, there have been many techniques and paradigms to prevent memory leaks. In summer 2011, I wrote a technical report to investigate potential sources of memory leaks and how to detect/prevent them.
 
 The technical report was divided into 6 sections.
-In Section 1, I wrote about the motivation and the goal for this technical report. In Section 2, I briefly summarized possible scenarios of dynamic memory allocation in C++. In Section 3, I presented common situations when memory leak can occur. In Section 4, I introduced some basic techniques to detect potential memory leak, such as `crtdbg.h` in Visual C++. In Section 5, I discussed classic memory leak prevention methods such as smart pointers. I concluded in Section 6.
+In Section 1, I wrote about the motivation and the goal for this technical report. In Section 2, I briefly summarized possible scenarios of dynamic memory allocation in C++. In Section 3, I presented common situations when memory leaks can occur. In Section 4, I introduced some basic techniques to detect potential memory leaks, such as `crtdbg.h` in Visual C++. In Section 5, I discussed classic memory leak prevention methods such as smart pointers. I concluded in Section 6.
 
-Smart pointer is a good example of the RAII (Resource Acquisition Is Initialization) principle in C++. A smart pointer is an object capable of managing the lifecycle of some resources such as dynamically allocated memory, file handles, etc. It has interfaces similar to those of raw pointers. The implementation of smart pointers often uses **reference counting** technique, which tracks how many times the resource is being referenced currently. When the reference count drops down to zero, the resource is freed. I analyzed in detail the implementation of `smart_ptr` in the [Boost][] library and `SmartPtr` in the [Loki][] library. In the report, I also showed my experiment results concerning the performance of different smart pointers.
+Smart pointer is a good example of the RAII (Resource Acquisition Is Initialization) principle in C++. A smart pointer is an object capable of managing the lifecycle of resources such as dynamically allocated memory, file handles, etc. It has interfaces similar to those of raw pointers. The implementation of smart pointers often uses the **reference counting** technique, which tracks how many times the resource is being referenced currently. When the reference count drops down to zero, the resource is freed. I analyzed in detail the implementation of `smart_ptr` in the [Boost][] library and `SmartPtr` in the [Loki][] library. In the report, I also showed my experiment results concerning the performance of different smart pointers.
 
 To write the technical report, I had read part of the source code of the Boost and Loki library. I also referred to the following books.
 
@@ -25,7 +25,7 @@ To write the technical report, I had read part of the source code of the Boost a
 This report helped me gain better understanding of the C++ language and some best practices in production code. I also became interested in metaprogramming (generic programing), an powerful aspect of C++.
 
 
-This technical report was my course project for *C++ Program Design and Training* (Course Number: 34100192) at Tsinghua University in summer 2011.
+This technical report was my course project for *C++ Program Design and Training* (Course Number: 34100192) at Tsinghua University in summer 2011. If you are interested in the complete version of the report (in Chinese), please contact me via email.
 
 [Boost]: http://www.boost.org/
 [Loki]: http://loki-lib.sourceforge.net/

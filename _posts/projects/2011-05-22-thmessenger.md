@@ -24,11 +24,18 @@ Here are some key features of THmeSSenger.
     *   Emoticons
     *   Images
 *   User/group search
-*   Message record review
+*   Message record viewer
 *   Advertisement broadcast
 
-The communication between the client and the server are based on TCP connections. We used XML to exchange messages and designed a complete set of application level protocol.
+The communication between the client and the server are based on TCP connections. We use XML to exchange messages and we have designed a complete set of application level protocol.
 
-THmeSSenger is a course project for *Introduction of Professional Diathesis* (Course Number: 44100301) at Tsinghua University from autumn 2010 to spring 2011. The course is designed to help first year computer software students get a taste of software engineering. The course consists of lectures, company visits and a guided software development project throughout the whole year.
+![THmeSSenger Login]({{ site.baseurl }}/images/projects/thmessenger-login.png)
+
+![THmeSSenger Main 1]({{ site.baseurl }}/images/projects/thmessenger-main-1.png)
+
+![THmeSSenger Main 2]({{ site.baseurl }}/images/projects/thmessenger-main-2.png)
+
+
+THmeSSenger was a course project for *Introduction of Professional Diathesis* (Course Number: 44100301) at Tsinghua University from autumn 2010 to spring 2011. The course was to help first year computer software students get a taste of software engineering. The course included lectures, company visits and a guided software development project throughout the whole year.
 
 The team members of THmeSSenger are: Heran Lin, Qi Guo, Yongbo Xiao, Heng Yu, and Hongzhong Chen.

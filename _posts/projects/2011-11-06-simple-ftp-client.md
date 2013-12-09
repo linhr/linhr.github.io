@@ -18,9 +18,11 @@ Here are the basic operations that SimpleFTPClient supports:
 Multiple upload or download operations are queued and
 handled one after another. The user can restart, pause or stop a file transfer process easily. Interrupted file transfers can be recovered later.
 
+![SimpleFTPClient]({{ site.baseurl }}/images/projects/simple-ftp-client.png)
+
 SimpleFTPClient supports PORT and PASV modes to avoid problems related to NAT or firewalls. The standard FTP commands supported by SimpleFTPClient are as follows:
 
 *   `USER`, `PASS`, `CWD`, `QUIT`, `PORT`, `PASV`, `TYPE`, `RETR`, `STOR`, `REST`, `RNFR`, `RNTO`, `ABOR`, `DELE`, `RMD`, `MKD`, `PWD`, `LIST` and `NOOP` (defined in RFC 959)
 *   `RETR` (for use in stream mode) and `SIZE` (defined in RFC 3659)
 
-SimpleFTPClient is one of my course project for *Computer Networks* (Course Number: 44100113) at Tsinghua University in autumn 2011.
+SimpleFTPClient was one of my course project for *Computer Networks* (Course Number: 44100113) at Tsinghua University in autumn 2011.
