@@ -15,7 +15,7 @@ exclude:
   - config.rb
 
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 
 google_analytics:
   tracking_id: 'UA-46149677-1'
