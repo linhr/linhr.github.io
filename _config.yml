@@ -20,3 +20,7 @@ highlighter: pygments
 google_analytics:
   tracking_id: 'UA-46149677-1'
   cookie_domain: 'linhr.me'
+
+links:
+  github: https://github.com/linhr
+  linkedin: https://www.linkedin.com/in/linhr
